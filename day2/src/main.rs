@@ -17,15 +17,13 @@ impl RangePair {
 }
 
 fn all_equal(chunks: Vec<String>) -> bool {
-    let mut sum = 0;
-
     for element in chunks.iter() {
-        if *element == chunks[0] {
-            sum += 1;
+        if *element != chunks[0] {
+            return false;
         }
     }
 
-    return sum == chunks.len();
+    return true;
 }
 
 fn is_fake(id: i64) -> bool {
